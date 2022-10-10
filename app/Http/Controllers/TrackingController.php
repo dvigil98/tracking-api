@@ -21,6 +21,14 @@ class TrackingController extends Controller
 
         $solicitud = $this->trackingRepository->obtenerInformacionDePedido($num_codigo);
 
+        if ( $solicitud == null ) {
+            return response()->json([
+                'code' => '400',
+                'status' => 'error',
+                'data' => 'not found'
+            ], 400);
+        }
+
         return response()->json([
             'code' => '200',
             'status' => 'ok',

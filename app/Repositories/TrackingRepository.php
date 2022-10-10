@@ -40,6 +40,7 @@ class TrackingRepository {
 
 
             return ['solicitud' => $solicitud, 'historial' => $historial];
+            
         } catch (\Throwable $th) {
             return null;
         }
